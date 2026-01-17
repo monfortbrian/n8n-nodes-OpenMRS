@@ -1,0 +1,45 @@
+{
+  "name": "n8n-nodes-openmrs",
+  "version": "0.1.0",
+  "description": "n8n node for OpenMRS FHIR integration",
+  "license": "MIT",
+  "homepage": "https://github.commonfortbrian/n8n-nodes-openmrs",
+  "author": {
+    "name": "Monfort N. Brian",
+    "email": "monfortnkurunziza0@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monfortbrian/n8n-nodes-openmrs.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc && npm run copy-assets",
+    "copy-assets": "node -p \"require('fs').cpSync('src/nodes/OpenMrs/OpenMrs.svg', 'dist/nodes/OpenMrs/OpenMrs.svg')\"",
+    "dev": "tsc --watch"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "n8n-community-node-package"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "nodes": [
+      "dist/nodes/OpenMrs/OpenMrs.node.js"
+    ],
+    "credentials": [
+      "dist/credentials/OpenMrsApi.credentials.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.9",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "n8n-core": "^1.122.9",
+    "n8n-workflow": "^2.4.1"
+  }
+}
